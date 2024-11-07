@@ -1609,7 +1609,7 @@ E0100..E01EF  ; T # Mn [240] VARIATION SELECTOR-17..VARIATION SELECTOR-256
 # EOF
 `
 let joiningType = {};
-let Parse(){
+function ArabicShapingParse(){
     shaping = shaping.replace(/^#.*\n?/gm, "")
     shaping = shaping.replace(/^\s*\n?/gm, "")
 
@@ -1619,7 +1619,6 @@ let Parse(){
         if(l.length > 1){
             joiningType[String.fromCodePoint(parseInt(l[0], 16))] = l[2];
         }
-        i++
     }
 
     derived_shaping = derived_shaping.replace(/^#.*\n?/gm, "")
